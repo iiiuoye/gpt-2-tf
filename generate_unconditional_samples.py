@@ -9,7 +9,7 @@ import tensorflow as tf
 import model, sample, encoder
 
 def sample_model(
-    model_name='117M',
+    model_name='kaggle_news',
     seed=None,
     nsamples=0,
     batch_size=1,

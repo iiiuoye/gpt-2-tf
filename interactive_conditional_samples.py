@@ -56,6 +56,7 @@ def interact_model(
         context = tf.placeholder(tf.int32, [batch_size, None])
         np.random.seed(seed)
         tf.set_random_seed(seed)
+
         output = sample.sample_sequence(
             hparams=hparams, length=length,
             context=context,
@@ -67,6 +68,8 @@ def interact_model(
         ckpt = tf.train.latest_checkpoint(os.path.join('models', model_name))
         saver.restore(sess, ckpt)
 
+        
+        
         while True:
             raw_text = input("Model prompt >>> ")
             while not raw_text:
